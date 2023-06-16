@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" class="css">
+  </head>
+  <body>
+ <div class="main">
+  <input
+  class="inputs"
+  type="text"
+  placeholder="Enter Items"
+  onchange="getValue(this.value)"
+/>
+<button class="btn" onclick="addTodo()">Add</button>
+
+<div id="list"></div>
+ </div>
+
+    <script>
+      let input = document.querySelector(".inputs");
+
+      let addTask;
+      const list = document.getElementById("list");
+      console.log(list);
+      let listArray = ["listitem", "listitem", "listitem"];
+      function listDb() {
+        list.innerHTML = `<ul>${listArray
+          .map((item, ind) => {
+            return `<li>${item}
+                <button class="btn" onclick="editTodo('${item}')">Edit</button>
+                <button class="btn" onclick="dlteTodo(${ind})">Delete</button></li>`;
+          })
+          .join("")}</ul>`;
+      }
+       listDb();
+      function getValue(val) {
+        // console.log(val)
+        addTask = val;
+        console.log(addTask);
+      }
+
+      function addTodo() {
+        // listArray.push(addTask);
+        // console.log(listArray);
+        listArray = [...listArray, addTask];
+        input.value = "";
+        listDb();
+      }
+      function editTodo(val){
+       
+        console.log(val)
+
+      }
+      function dlteTodo(index){
+        listArray.splice(index,1);
+        listDb();
+        
+
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+.main{
+    background-color: black;
+    height: 100vh;
+    color:#fff;
+    margin:0 auto;
+    text-align: center;
+}
+.main .inputs{
+    padding: 7px 12px;
+    border: 0;
+    margin:10px 0;
+}
+.main .btn{
+    padding: 7px 12px;
+    border: 0;
+    background-color: blueviolet;
+    color:#fff;
+}
+ul{
+    list-style: none;
+    padding:0;
+}
+li{
+    margin-top:5px;
+    font-size:20px;
+}
