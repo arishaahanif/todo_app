@@ -32,7 +32,10 @@
           .map((item, ind) => {
             return `<li>${item}
                 <button class="btn" onclick="editTodo('${item}')">Edit</button>
-                <button class="btn" onclick="dlteTodo(${ind})">Delete</button></li>`;
+                <button class="btn" onclick="dlteTodo(${ind})">Delete</button>
+                <button class="btn" onclick="updateTodo(${ind})">Update</button>
+
+                </li>`;
           })
           .join("")}</ul>`;
       }
@@ -51,7 +54,8 @@
         listDb();
       }
       function editTodo(val){
-       
+       input.value=val;
+
         console.log(val)
 
       }
@@ -59,6 +63,16 @@
         listArray.splice(index,1);
         listDb();
         
+
+      }
+      function updateTodo(index){
+       console.log(addTask)
+       console.log(index)
+       listArray[index]=addTask;
+       listDb();
+       
+      //  console.log(       listArray[index])
+
 
       }
     </script>
